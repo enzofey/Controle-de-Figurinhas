@@ -1,0 +1,8 @@
+*.identcache
+*.vlb
+*.dproj.local
+*.res
+/Win32/
+/__history/
+/__recovery/
+*.dll
