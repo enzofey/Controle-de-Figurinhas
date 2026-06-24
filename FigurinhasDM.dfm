@@ -25,7 +25,12 @@ object FigurinhasDM: TFigurinhasDM
   end
   object qryPaineis: TFDQuery
     Connection = Conexao
-    Left = 192
-    Top = 168
+    Left = 144
+    Top = 160
+  end
+  object qryUpdatePainel: TFDQuery
+    Connection = Conexao
+    Left = 272
+    Top = 160
   end
 end

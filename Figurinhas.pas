@@ -120,6 +120,8 @@ type
     procedure cbSelTodasSelect(Sender: TObject);
     procedure cbSelFaltSelect(Sender: TObject);
     procedure cbSelRepSelect(Sender: TObject);
+    procedure pnltodasMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
   private
     { Private declarations }
   public
@@ -194,7 +196,7 @@ var selecao: string;
     painel, painel_rep: TPanel;
     numero: integer;
 begin
- selecao := cbSelTodas.text;
+ selecao := cbSelRep.text;
 
  with DMFigurinhas.qryPaineis do
  begin
@@ -292,16 +294,21 @@ begin
         end;
    end;
 
-   painel.Font.Color := clWindowText;
+   painel_rep.StyleElements := [];
    painel.StyleElements := [];
 
    if FieldByName('possui').AsString = 'N' then begin
     painel.Visible := False;
     painel_rep.Visible := False;
    end;
-   if FieldByName('quant_rep').AsInteger > 0 then
-   painel_rep.caption := IntToStr(FieldByName('quant_rep').AsInteger);
-    Next;
+
+   if FieldByName('quant_rep').AsInteger > 0 then begin
+    painel_rep.caption := IntToStr(FieldByName('quant_rep').AsInteger);
+    painel.Color := clSkyBlue;
+    painel_rep.Color := clSkyBlue
+   end;
+
+   Next;
   end;
  end;
 
@@ -410,15 +417,26 @@ begin
         end;
    end;
 
-   painel.Font.Color := clWindowText;
-   painel_rep.Font.Color := clWindowText;
+   painel_rep.Visible := True;
+
    painel.StyleElements := [];
    painel_rep.StyleElements := [];
 
-   if FieldByName('possui').AsString = 'S' then painel.Color := clSkyBlue
-   else painel.Color := clMenuHighlight;
-    painel_rep.Caption := IntToStr(FieldByName('quant_rep').AsInteger);
-    Next;
+   if FieldByName('possui').AsString = 'S'
+   then begin
+    painel.Color := clSkyBlue;
+    painel_rep.Color := clSkyBlue
+   end
+   else begin
+    painel.Color := clMenuHighlight;
+    painel_rep.Color := clMenuHighlight;
+   end;
+
+   if IntToStr(FieldByName('quant_rep').AsInteger) = '0'
+   then painel_rep.Visible := False
+   else painel_rep.Caption := IntToStr(FieldByName('quant_rep').AsInteger);
+
+   Next;
   end;
  end;
 end;
@@ -444,4 +462,188 @@ begin
   end;
  end;
 end;
+
+procedure TControle.pnltodasMouseDown(Sender: TObject; Button: TMouseButton;
+  Shift: TShiftState; X, Y: Integer);
+var selecao, numero, possui_nova, possui_atual, possui_botao_direito: string;
+    quant_rep_atual, nova_quant_rep: integer;
+    painel, painel_rep: TPanel;
+begin
+ selecao := cbSelTodas.Text;
+ Painel := Sender as TPanel;
+ numero := painel.Caption;
+
+ if Button = mbLeft then
+ begin
+  with DMFigurinhas.qryPaineis do
+  begin
+   Close;
+   SQL.Clear;
+   SQL.Add('select quant_rep, possui from figurinhas ');
+    SQL.Add('where selecao = :selecao ');
+   SQL.Add('and numero = :numero');
+   ParamByName('selecao').AsString := selecao;
+   ParamByName('numero').AsString := numero;
+   Open;
+
+   quant_rep_atual := FieldByName('quant_rep').AsInteger;
+   possui_atual := FieldByName('possui').AsString;
+
+   if (possui_atual = 'N') and (quant_rep_atual = 0)
+   then nova_quant_rep := quant_rep_atual;
+
+   if (possui_atual = 'S') then nova_quant_rep := quant_rep_atual + 1;
+
+   with DMFigurinhas.qryUpdatePainel do
+   begin
+    SQL.Clear;
+    SQL.Add('update figurinhas set quant_rep = :nova_quantidade_rep, ');
+    SQL.Add('possui = :possui ');
+    SQL.Add('where selecao = :selecao ');
+    SQL.Add('and numero = :numero');
+
+    ParamByName('possui').AsString := 'S';
+    ParamByName('nova_quantidade_rep').AsInteger := nova_quant_rep;
+    ParamByName('selecao').AsString := selecao;
+    ParamByName('numero').AsString := numero;
+    ExecSQL;
+
+    SQL.Clear;
+    SQL.Add('select quant_rep, possui from figurinhas ');
+    SQL.Add('where selecao = :selecao ');
+    SQL.Add('and numero = :numero');
+    ParamByName('selecao').AsString := selecao;
+    ParamByName('numero').AsString := numero;
+    Open;
+
+    case StrToInt(numero) of
+     1:  painel_rep := pnltodasrep1;
+     2:  painel_rep := pnltodasrep2;
+     3:  painel_rep := pnltodasrep3;
+     4:  painel_rep := pnltodasrep4;
+     5:  painel_rep := pnltodasrep5;
+     6:  painel_rep := pnltodasrep6;
+     7:  painel_rep := pnltodasrep7;
+     8:  painel_rep := pnltodasrep8;
+     9:  painel_rep := pnltodasrep9;
+     10: painel_rep := pnltodasrep10;
+     11: painel_rep := pnltodasrep11;
+     12: painel_rep := pnltodasrep12;
+     13: painel_rep := pnltodasrep13;
+     14: painel_rep := pnltodasrep14;
+     15: painel_rep := pnltodasrep15;
+     16: painel_rep := pnltodasrep16;
+     17: painel_rep := pnltodasrep17;
+     18: painel_rep := pnltodasrep18;
+     19: painel_rep := pnltodasrep19;
+     20: painel_rep := pnltodasrep20;
+    end;
+
+    painel_rep.Caption := IntToStr(nova_quant_rep);
+    possui_nova := FieldByName('possui').AsString;
+
+    if possui_nova = 'S' then painel.Color := clSkyBlue;
+
+    if FieldByName('quant_rep').AsInteger > 0 then begin
+     painel_rep.Visible := True;
+     painel_rep.Color := clSkyBlue
+    end;
+   end;
+   Next;
+  end;
+ end;
+
+ if Button = mbRight then
+ begin
+  with DMFigurinhas.qryPaineis do
+  begin
+   Close;
+   SQL.Clear;
+   SQL.Add('select quant_rep, possui from figurinhas ');
+    SQL.Add('where selecao = :selecao ');
+   SQL.Add('and numero = :numero');
+   ParamByName('selecao').AsString := selecao;
+   ParamByName('numero').AsString := numero;
+   Open;
+
+   quant_rep_atual := FieldByName('quant_rep').AsInteger;
+   possui_atual := FieldByName('possui').AsString;
+
+   if (possui_atual = 'S') and (quant_rep_atual = 0)
+   then possui_botao_direito := 'N';
+
+   if (possui_atual = 'S') and (quant_rep_atual > 0)
+   then begin
+    nova_quant_rep := quant_rep_atual - 1;
+    possui_botao_direito := 'S';
+   end;
+
+   with DMFigurinhas.qryUpdatePainel do
+   begin
+    SQL.Clear;
+    SQL.Add('update figurinhas set quant_rep = :nova_quantidade_rep, ');
+    SQL.Add('possui = :possui ');
+    SQL.Add('where selecao = :selecao ');
+    SQL.Add('and numero = :numero');
+
+    ParamByName('possui').AsString := possui_botao_direito;
+    ParamByName('nova_quantidade_rep').AsInteger := nova_quant_rep;
+    ParamByName('selecao').AsString := selecao;
+    ParamByName('numero').AsString := numero;
+    ExecSQL;
+
+    SQL.Clear;
+    SQL.Add('select quant_rep, possui from figurinhas ');
+    SQL.Add('where selecao = :selecao ');
+    SQL.Add('and numero = :numero');
+    ParamByName('selecao').AsString := selecao;
+    ParamByName('numero').AsString := numero;
+    Open;
+
+    case StrToInt(numero) of
+     1:  painel_rep := pnltodasrep1;
+     2:  painel_rep := pnltodasrep2;
+     3:  painel_rep := pnltodasrep3;
+     4:  painel_rep := pnltodasrep4;
+     5:  painel_rep := pnltodasrep5;
+     6:  painel_rep := pnltodasrep6;
+     7:  painel_rep := pnltodasrep7;
+     8:  painel_rep := pnltodasrep8;
+     9:  painel_rep := pnltodasrep9;
+     10: painel_rep := pnltodasrep10;
+     11: painel_rep := pnltodasrep11;
+     12: painel_rep := pnltodasrep12;
+     13: painel_rep := pnltodasrep13;
+     14: painel_rep := pnltodasrep14;
+     15: painel_rep := pnltodasrep15;
+     16: painel_rep := pnltodasrep16;
+     17: painel_rep := pnltodasrep17;
+     18: painel_rep := pnltodasrep18;
+     19: painel_rep := pnltodasrep19;
+     20: painel_rep := pnltodasrep20;
+    end;
+
+    painel_rep.Caption := IntToStr(nova_quant_rep);
+    possui_nova := FieldByName('possui').AsString;
+
+    if possui_nova = 'S'
+    then painel.Color := clSkyBlue
+    else begin
+     painel.Color := clMenuHighlight;
+     painel_rep.Visible := False;
+    end;
+
+    if FieldByName('quant_rep').AsInteger > 0 then begin
+     painel_rep.Visible := True;
+     painel_rep.Color := clSkyBlue;
+    end;
+
+    if FieldByName('quant_rep').AsInteger = 0 then painel_rep.Visible := False;
+    
+   end;
+   Next;
+  end;
+ end;
+end;
+
 end.

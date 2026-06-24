@@ -17,7 +17,7 @@ object Controle: TControle
     Top = 0
     Width = 1203
     Height = 703
-    ActivePage = TabSheet3
+    ActivePage = TabSheet1
     Align = alClient
     TabOrder = 0
     ExplicitWidth = 1197
@@ -52,6 +52,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 1
+        OnMouseDown = pnltodasMouseDown
       end
       object pnltodas16: TPanel
         Left = 31
@@ -66,6 +67,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 2
+        OnMouseDown = pnltodasMouseDown
       end
       object pnltodas17: TPanel
         Left = 86
@@ -80,6 +82,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 3
+        OnMouseDown = pnltodasMouseDown
       end
       object pnltodas18: TPanel
         Left = 141
@@ -94,6 +97,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 4
+        OnMouseDown = pnltodasMouseDown
       end
       object pnltodas19: TPanel
         Left = 196
@@ -108,6 +112,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 5
+        OnMouseDown = pnltodasMouseDown
       end
       object pnltodas20: TPanel
         Left = 251
@@ -122,6 +127,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 6
+        OnMouseDown = pnltodasMouseDown
       end
       object pnltodas6: TPanel
         Left = 31
@@ -136,6 +142,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 7
+        OnMouseDown = pnltodasMouseDown
       end
       object pnltodas7: TPanel
         Left = 86
@@ -150,6 +157,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 8
+        OnMouseDown = pnltodasMouseDown
       end
       object pnltodas8: TPanel
         Left = 141
@@ -164,6 +172,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 9
+        OnMouseDown = pnltodasMouseDown
       end
       object pnltodas9: TPanel
         Left = 196
@@ -178,6 +187,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 10
+        OnMouseDown = pnltodasMouseDown
       end
       object pnltodas3: TPanel
         Left = 141
@@ -192,6 +202,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 11
+        OnMouseDown = pnltodasMouseDown
       end
       object pnltodas2: TPanel
         Left = 86
@@ -206,6 +217,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 12
+        OnMouseDown = pnltodasMouseDown
       end
       object pnltodas4: TPanel
         Left = 196
@@ -220,6 +232,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 13
+        OnMouseDown = pnltodasMouseDown
       end
       object pnltodas5: TPanel
         Left = 251
@@ -234,6 +247,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 14
+        OnMouseDown = pnltodasMouseDown
       end
       object pnltodas11: TPanel
         Left = 31
@@ -248,6 +262,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 15
+        OnMouseDown = pnltodasMouseDown
       end
       object pnltodas12: TPanel
         Left = 86
@@ -262,6 +277,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 16
+        OnMouseDown = pnltodasMouseDown
       end
       object pnltodas13: TPanel
         Left = 141
@@ -276,6 +292,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 17
+        OnMouseDown = pnltodasMouseDown
       end
       object pnltodas14: TPanel
         Left = 196
@@ -290,6 +307,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 18
+        OnMouseDown = pnltodasMouseDown
       end
       object pnltodas15: TPanel
         Left = 251
@@ -304,6 +322,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 19
+        OnMouseDown = pnltodasMouseDown
       end
       object pnltodas1: TPanel
         Left = 31
@@ -318,12 +337,19 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 20
+        OnMouseDown = pnltodasMouseDown
       end
       object pnltodasrep1: TPanel
         Left = 64
         Top = 80
         Width = 25
         Height = 25
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 21
       end
       object pnltodasrep2: TPanel
@@ -331,6 +357,12 @@ object Controle: TControle
         Top = 80
         Width = 25
         Height = 25
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 22
       end
       object pnltodasrep3: TPanel
@@ -338,6 +370,12 @@ object Controle: TControle
         Top = 80
         Width = 25
         Height = 25
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 23
       end
       object pnltodasrep4: TPanel
@@ -345,6 +383,12 @@ object Controle: TControle
         Top = 80
         Width = 25
         Height = 25
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 24
       end
       object pnltodasrep5: TPanel
@@ -352,6 +396,12 @@ object Controle: TControle
         Top = 80
         Width = 25
         Height = 25
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 25
       end
       object pnltodasrep6: TPanel
@@ -359,6 +409,12 @@ object Controle: TControle
         Top = 136
         Width = 25
         Height = 25
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 26
       end
       object pnltodasrep7: TPanel
@@ -366,6 +422,12 @@ object Controle: TControle
         Top = 136
         Width = 25
         Height = 25
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 27
       end
       object pnltodasrep8: TPanel
@@ -373,6 +435,12 @@ object Controle: TControle
         Top = 136
         Width = 25
         Height = 25
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 28
       end
       object pnltodasrep9: TPanel
@@ -380,6 +448,12 @@ object Controle: TControle
         Top = 136
         Width = 25
         Height = 25
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 29
       end
       object pnltodasrep10: TPanel
@@ -387,6 +461,12 @@ object Controle: TControle
         Top = 136
         Width = 25
         Height = 25
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 30
       end
       object pnltodasrep11: TPanel
@@ -394,6 +474,12 @@ object Controle: TControle
         Top = 184
         Width = 25
         Height = 25
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 31
       end
       object pnltodasrep12: TPanel
@@ -401,6 +487,12 @@ object Controle: TControle
         Top = 184
         Width = 25
         Height = 25
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 32
       end
       object pnltodasrep13: TPanel
@@ -408,6 +500,12 @@ object Controle: TControle
         Top = 184
         Width = 25
         Height = 25
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 33
       end
       object pnltodasrep14: TPanel
@@ -415,6 +513,12 @@ object Controle: TControle
         Top = 184
         Width = 25
         Height = 25
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 34
       end
       object pnltodasrep15: TPanel
@@ -422,6 +526,12 @@ object Controle: TControle
         Top = 184
         Width = 25
         Height = 25
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 35
       end
       object pnltodasrep20: TPanel
@@ -429,6 +539,12 @@ object Controle: TControle
         Top = 240
         Width = 25
         Height = 25
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 36
       end
       object pnltodasrep19: TPanel
@@ -436,6 +552,12 @@ object Controle: TControle
         Top = 240
         Width = 25
         Height = 25
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 37
       end
       object pnltodasrep18: TPanel
@@ -443,6 +565,12 @@ object Controle: TControle
         Top = 240
         Width = 25
         Height = 25
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 38
       end
       object pnltodasrep17: TPanel
@@ -450,6 +578,12 @@ object Controle: TControle
         Top = 240
         Width = 25
         Height = 25
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 39
       end
       object pnltodasrep16: TPanel
@@ -457,6 +591,12 @@ object Controle: TControle
         Top = 240
         Width = 25
         Height = 25
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
         TabOrder = 40
       end
     end

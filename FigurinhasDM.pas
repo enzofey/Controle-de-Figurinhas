@@ -16,6 +16,7 @@ type
     PGLink: TFDPhysPgDriverLink;
     qrySelecoes: TFDQuery;
     qryPaineis: TFDQuery;
+    qryUpdatePainel: TFDQuery;
   private
     { Private declarations }
   public
