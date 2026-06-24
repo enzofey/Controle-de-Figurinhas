@@ -17,11 +17,72 @@ object Controle: TControle
     Top = 0
     Width = 1203
     Height = 703
-    ActivePage = TabSheet1
+    ActivePage = VisaoGeral
     Align = alClient
     TabOrder = 0
+    OnChange = FiguritasChange
     ExplicitWidth = 1197
     ExplicitHeight = 686
+    object VisaoGeral: TTabSheet
+      Caption = 'Vis'#227'o Geral'
+      ImageIndex = 3
+      object lblQuantTot: TLabel
+        Left = 40
+        Top = 40
+        Width = 168
+        Height = 15
+        Caption = 'Quantidade Total de Figurinhas:'
+      end
+      object lblQuantTotRep: TLabel
+        Left = 39
+        Top = 104
+        Width = 222
+        Height = 15
+        Caption = 'Quantidade Total de Figurinhas Repetidas:'
+      end
+      object lblQuantTotRest: TLabel
+        Left = 40
+        Top = 136
+        Width = 221
+        Height = 15
+        Caption = 'Quantidade Total de Figurinhas Restantes:'
+      end
+      object lblQuantTotColadas: TLabel
+        Left = 40
+        Top = 72
+        Width = 213
+        Height = 15
+        Caption = 'Quantidade Total de Figurinhas Coladas:'
+      end
+      object QuantTot: TLabel
+        Left = 227
+        Top = 40
+        Width = 106
+        Height = 15
+        Caption = '<Atualize a P'#225'gina>'
+      end
+      object QuantCol: TLabel
+        Left = 267
+        Top = 72
+        Width = 106
+        Height = 15
+        Caption = '<Atualize a P'#225'gina>'
+      end
+      object QuantRep: TLabel
+        Left = 275
+        Top = 104
+        Width = 106
+        Height = 15
+        Caption = '<Atualize a P'#225'gina>'
+      end
+      object QuantRest: TLabel
+        Left = 275
+        Top = 136
+        Width = 106
+        Height = 15
+        Caption = '<Atualize a P'#225'gina>'
+      end
+    end
     object TabSheet1: TTabSheet
       Caption = 'Todas'
       Font.Charset = DEFAULT_CHARSET
@@ -625,6 +686,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 1
+        OnMouseDown = pnlfaltMouseDown
       end
       object pnlfalt16: TPanel
         Left = 32
@@ -639,6 +701,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 2
+        OnMouseDown = pnlfaltMouseDown
       end
       object pnlfalt17: TPanel
         Left = 87
@@ -653,6 +716,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 3
+        OnMouseDown = pnlfaltMouseDown
       end
       object pnlfalt18: TPanel
         Left = 142
@@ -667,6 +731,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 4
+        OnMouseDown = pnlfaltMouseDown
       end
       object pnlfalt19: TPanel
         Left = 197
@@ -681,6 +746,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 5
+        OnMouseDown = pnlfaltMouseDown
       end
       object pnlfalt20: TPanel
         Left = 252
@@ -695,6 +761,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 6
+        OnMouseDown = pnlfaltMouseDown
       end
       object pnlfalt6: TPanel
         Left = 32
@@ -709,6 +776,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 7
+        OnMouseDown = pnlfaltMouseDown
       end
       object pnlfalt7: TPanel
         Left = 87
@@ -723,6 +791,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 8
+        OnMouseDown = pnlfaltMouseDown
       end
       object pnlfalt8: TPanel
         Left = 142
@@ -737,6 +806,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 9
+        OnMouseDown = pnlfaltMouseDown
       end
       object pnlfalt11: TPanel
         Left = 32
@@ -751,6 +821,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 10
+        OnMouseDown = pnlfaltMouseDown
       end
       object pnlfalt3: TPanel
         Left = 142
@@ -765,6 +836,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 11
+        OnMouseDown = pnlfaltMouseDown
       end
       object pnlfalt2: TPanel
         Left = 87
@@ -779,6 +851,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 12
+        OnMouseDown = pnlfaltMouseDown
       end
       object pnlfalt4: TPanel
         Left = 197
@@ -793,6 +866,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 13
+        OnMouseDown = pnlfaltMouseDown
       end
       object pnlfalt5: TPanel
         Left = 252
@@ -807,6 +881,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 14
+        OnMouseDown = pnlfaltMouseDown
       end
       object pnlfalt1: TPanel
         Left = 32
@@ -821,6 +896,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 15
+        OnMouseDown = pnlfaltMouseDown
       end
       object pnlfalt12: TPanel
         Left = 87
@@ -835,6 +911,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 16
+        OnMouseDown = pnlfaltMouseDown
       end
       object pnlfalt13: TPanel
         Left = 142
@@ -849,6 +926,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 17
+        OnMouseDown = pnlfaltMouseDown
       end
       object pnlfalt14: TPanel
         Left = 197
@@ -863,6 +941,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 18
+        OnMouseDown = pnlfaltMouseDown
       end
       object pnlfalt15: TPanel
         Left = 252
@@ -877,6 +956,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 19
+        OnMouseDown = pnlfaltMouseDown
       end
       object pnlfalt9: TPanel
         Left = 197
@@ -891,6 +971,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 20
+        OnMouseDown = pnlfaltMouseDown
       end
     end
     object TabSheet3: TTabSheet
@@ -918,6 +999,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 1
+        OnMouseDown = pnlrepMouseDown
       end
       object pnlrep16: TPanel
         Left = 32
@@ -932,6 +1014,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 2
+        OnMouseDown = pnlrepMouseDown
       end
       object pnlrep17: TPanel
         Left = 87
@@ -946,6 +1029,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 3
+        OnMouseDown = pnlrepMouseDown
       end
       object pnlrep18: TPanel
         Left = 142
@@ -960,6 +1044,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 4
+        OnMouseDown = pnlrepMouseDown
       end
       object pnlrep19: TPanel
         Left = 197
@@ -974,6 +1059,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 5
+        OnMouseDown = pnlrepMouseDown
       end
       object pnlrep20: TPanel
         Left = 252
@@ -988,6 +1074,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 6
+        OnMouseDown = pnlrepMouseDown
       end
       object pnlrep6: TPanel
         Left = 32
@@ -1002,6 +1089,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 7
+        OnMouseDown = pnlrepMouseDown
       end
       object pnlrep7: TPanel
         Left = 87
@@ -1016,6 +1104,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 8
+        OnMouseDown = pnlrepMouseDown
       end
       object pnlrep8: TPanel
         Left = 142
@@ -1030,6 +1119,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 9
+        OnMouseDown = pnlrepMouseDown
       end
       object pnlrep11: TPanel
         Left = 32
@@ -1044,6 +1134,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 10
+        OnMouseDown = pnlrepMouseDown
       end
       object pnlrep3: TPanel
         Left = 142
@@ -1058,6 +1149,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 11
+        OnMouseDown = pnlrepMouseDown
       end
       object pnlrep2: TPanel
         Left = 87
@@ -1072,6 +1164,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 12
+        OnMouseDown = pnlrepMouseDown
       end
       object pnlrep4: TPanel
         Left = 197
@@ -1086,6 +1179,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 13
+        OnMouseDown = pnlrepMouseDown
       end
       object pnlrep5: TPanel
         Left = 252
@@ -1100,6 +1194,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 14
+        OnMouseDown = pnlrepMouseDown
       end
       object pnlrep1: TPanel
         Left = 32
@@ -1114,6 +1209,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 15
+        OnMouseDown = pnlrepMouseDown
       end
       object pnlrep12: TPanel
         Left = 87
@@ -1128,6 +1224,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 16
+        OnMouseDown = pnlrepMouseDown
       end
       object pnlrep13: TPanel
         Left = 142
@@ -1142,9 +1239,10 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 17
+        OnMouseDown = pnlrepMouseDown
       end
       object pnlrep14: TPanel
-        Left = 189
+        Left = 197
         Top = 198
         Width = 49
         Height = 49
@@ -1156,6 +1254,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 18
+        OnMouseDown = pnlrepMouseDown
       end
       object pnlrep15: TPanel
         Left = 252
@@ -1170,6 +1269,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 19
+        OnMouseDown = pnlrepMouseDown
       end
       object pnlrep9: TPanel
         Left = 197
@@ -1184,6 +1284,7 @@ object Controle: TControle
         Font.Style = []
         ParentFont = False
         TabOrder = 20
+        OnMouseDown = pnlrepMouseDown
       end
       object pnlreprep1: TPanel
         Left = 64

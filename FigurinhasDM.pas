@@ -17,6 +17,7 @@ type
     qrySelecoes: TFDQuery;
     qryPaineis: TFDQuery;
     qryUpdatePainel: TFDQuery;
+    qryVisaoGeral: TFDQuery;
   private
     { Private declarations }
   public

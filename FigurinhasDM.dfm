@@ -33,4 +33,9 @@ object FigurinhasDM: TFigurinhasDM
     Left = 272
     Top = 160
   end
+  object qryVisaoGeral: TFDQuery
+    Connection = Conexao
+    Left = 40
+    Top = 256
+  end
 end
