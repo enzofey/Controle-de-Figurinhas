@@ -38,4 +38,14 @@ object FigurinhasDM: TFigurinhasDM
     Left = 40
     Top = 256
   end
+  object qryExportar: TFDQuery
+    Connection = Conexao
+    Left = 168
+    Top = 256
+  end
+  object qryImportar: TFDQuery
+    Connection = Conexao
+    Left = 280
+    Top = 256
+  end
 end

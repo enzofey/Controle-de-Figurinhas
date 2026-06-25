@@ -35,55 +35,110 @@ object Controle: TControle
       end
       object lblQuantTotRep: TLabel
         Left = 39
-        Top = 104
+        Top = 136
         Width = 222
         Height = 15
         Caption = 'Quantidade Total de Figurinhas Repetidas:'
       end
       object lblQuantTotRest: TLabel
         Left = 40
-        Top = 136
+        Top = 168
         Width = 221
         Height = 15
         Caption = 'Quantidade Total de Figurinhas Restantes:'
       end
       object lblQuantTotColadas: TLabel
         Left = 40
-        Top = 72
+        Top = 104
         Width = 213
         Height = 15
         Caption = 'Quantidade Total de Figurinhas Coladas:'
       end
       object QuantTot: TLabel
-        Left = 227
+        Left = 214
         Top = 40
-        Width = 106
+        Width = 46
         Height = 15
         Caption = '<Atualize a P'#225'gina>'
       end
       object QuantCol: TLabel
-        Left = 267
-        Top = 72
-        Width = 106
-        Height = 15
-        Caption = '<Atualize a P'#225'gina>'
-      end
-      object QuantRep: TLabel
-        Left = 275
+        Left = 259
         Top = 104
         Width = 106
         Height = 15
         Caption = '<Atualize a P'#225'gina>'
       end
-      object QuantRest: TLabel
-        Left = 275
+      object QuantRep: TLabel
+        Left = 267
         Top = 136
         Width = 106
         Height = 15
         Caption = '<Atualize a P'#225'gina>'
       end
+      object QuantRest: TLabel
+        Left = 267
+        Top = 168
+        Width = 106
+        Height = 15
+        Caption = '<Atualize a P'#225'gina>'
+      end
+      object PorcentagemCompleta: TLabel
+        Left = 423
+        Top = 40
+        Width = 106
+        Height = 15
+        Caption = '<Atualize a P'#225'gina>'
+      end
+      object lblPercCompleta: TLabel
+        Left = 288
+        Top = 40
+        Width = 129
+        Height = 15
+        Caption = 'Porcentagem Completa:'
+      end
+      object lblQuantBrilhante: TLabel
+        Left = 39
+        Top = 72
+        Width = 136
+        Height = 15
+        Caption = 'Quantidade de Brilhantes:'
+      end
+      object QtdeBrilhante: TLabel
+        Left = 181
+        Top = 72
+        Width = 106
+        Height = 15
+        Caption = '<Atualize a P'#225'gina>'
+      end
+      object btnExportFalt: TButton
+        Left = 39
+        Top = 208
+        Width = 106
+        Height = 25
+        Caption = 'Exportar Faltantes'
+        TabOrder = 0
+        OnClick = btnExportFaltClick
+      end
+      object btnImportarLista: TButton
+        Left = 40
+        Top = 288
+        Width = 106
+        Height = 25
+        Caption = 'Importar Lista'
+        TabOrder = 1
+        OnClick = btnImportarListaClick
+      end
+      object btnExportarRep: TButton
+        Left = 39
+        Top = 248
+        Width = 106
+        Height = 25
+        Caption = 'Exportar Repetidas'
+        TabOrder = 2
+        OnClick = btnExportarRepClick
+      end
     end
-    object TabSheet1: TTabSheet
+    object Todas: TTabSheet
       Caption = 'Todas'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowFrame
@@ -91,6 +146,20 @@ object Controle: TControle
       Font.Name = 'Segoe UI'
       Font.Style = []
       ParentFont = False
+      object lblPossui: TLabel
+        Left = 415
+        Top = 35
+        Width = 34
+        Height = 15
+        Caption = 'Poss'#250'i'
+      end
+      object lblnaopossui: TLabel
+        Left = 415
+        Top = 66
+        Width = 59
+        Height = 15
+        Caption = 'N'#227'o Poss'#250'i'
+      end
       object cbSelTodas: TComboBox
         Left = 31
         Top = 32
@@ -660,10 +729,54 @@ object Controle: TControle
         ParentFont = False
         TabOrder = 40
       end
+      object pnllegenda1: TPanel
+        Left = 384
+        Top = 30
+        Width = 25
+        Height = 25
+        Color = clSkyBlue
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 41
+      end
+      object pnllegenda2: TPanel
+        Left = 384
+        Top = 61
+        Width = 25
+        Height = 25
+        Color = clMenuHighlight
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 42
+      end
     end
-    object TabSheet2: TTabSheet
+    object Faltantes: TTabSheet
       Caption = 'Faltantes'
       ImageIndex = 1
+      object Label1: TLabel
+        Left = 415
+        Top = 35
+        Width = 34
+        Height = 15
+        Caption = 'Poss'#250'i'
+      end
+      object Label2: TLabel
+        Left = 415
+        Top = 66
+        Width = 59
+        Height = 15
+        Caption = 'N'#227'o Poss'#250'i'
+      end
       object cbSelFalt: TComboBox
         Left = 32
         Top = 32
@@ -973,10 +1086,54 @@ object Controle: TControle
         TabOrder = 20
         OnMouseDown = pnlfaltMouseDown
       end
+      object Panel1: TPanel
+        Left = 384
+        Top = 30
+        Width = 25
+        Height = 25
+        Color = clSkyBlue
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 21
+      end
+      object Panel2: TPanel
+        Left = 384
+        Top = 61
+        Width = 25
+        Height = 25
+        Color = clMenuHighlight
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 22
+      end
     end
-    object TabSheet3: TTabSheet
+    object Repetidas: TTabSheet
       Caption = 'Repetidas'
       ImageIndex = 2
+      object Label3: TLabel
+        Left = 415
+        Top = 35
+        Width = 34
+        Height = 15
+        Caption = 'Poss'#250'i'
+      end
+      object Label4: TLabel
+        Left = 415
+        Top = 66
+        Width = 59
+        Height = 15
+        Caption = 'N'#227'o Poss'#250'i'
+      end
       object cbSelRep: TComboBox
         Left = 32
         Top = 32
@@ -1426,6 +1583,56 @@ object Controle: TControle
         Height = 25
         TabOrder = 40
       end
+      object Panel3: TPanel
+        Left = 384
+        Top = 30
+        Width = 25
+        Height = 25
+        Color = clSkyBlue
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 41
+      end
+      object Panel4: TPanel
+        Left = 384
+        Top = 61
+        Width = 25
+        Height = 25
+        Color = clMenuHighlight
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -12
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 42
+      end
     end
+  end
+  object DialogExportarFalt: TSaveDialog
+    DefaultExt = '.txt'
+    FileName = 'Faltantes.txt'
+    Filter = 'Arquivo TXT (*.txt)|*.txt'
+    Left = 580
+    Top = 50
+  end
+  object DialogExportarRep: TSaveDialog
+    DefaultExt = '.txt'
+    FileName = 'Repetidas.txt'
+    Filter = 'Arquivo TXT (*.txt)|*.txt'
+    Left = 700
+    Top = 50
+  end
+  object DialogImportar: TOpenDialog
+    DefaultExt = '.txt'
+    Filter = 'Arquivo TXT (*.txt)|*.txt'
+    Left = 804
+    Top = 50
   end
 end

@@ -18,6 +18,8 @@ type
     qryPaineis: TFDQuery;
     qryUpdatePainel: TFDQuery;
     qryVisaoGeral: TFDQuery;
+    qryExportar: TFDQuery;
+    qryImportar: TFDQuery;
   private
     { Private declarations }
   public
