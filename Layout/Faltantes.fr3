@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Version="2026.2.1" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="692223" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="46198,3047807639" ReportOptions.Description.Text="" ReportOptions.LastChange="46198,5313994792" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end.">
+  <Datasets>
+    <item DataSet="qryFaltantes" DataSetName="qryFaltantes"/>
+    <item DataSet="qryFaltTotal" DataSetName="qryFaltTotal"/>
+  </Datasets>
+  <TfrxDataPage Name="Data" HGuides.Text="" VGuides.Text="" Height="1000" Left="0" Top="0" Width="1000">
+    <TfrxFDDatabase Name="Conexao" Left="68" Top="12" DriverName="pG" DatabaseName="00003P" Params.Text="Database=00003P&#13;&#10;User_Name=postgres&#13;&#10;Password=evf&#13;&#10;DriverID=pG" LoginPrompt="False" Connected="True" PropData="05704C65667402440470546F70020C"/>
+    <TfrxFDQuery Name="qryFaltantes" UserName="qryFaltantes" CloseDataSource="True" BCDToCurrency="False" DataSetOptions="0" Left="144" Top="12" IgnoreDupParams="False" SQL.Text="select selecao, numero, abreviacao &#13;&#10;from figurinhas&#13;&#10;where possui=&#39;N&#39;" MacroCreate="True" MacroExpand="True" ReadOnly="False" Database="Conexao">
+      <FieldDefs>
+        <item FieldName="selecao" FieldType="fftString" Size="50"/>
+        <item FieldName="numero" FieldType="fftString"/>
+        <item FieldName="abreviacao" FieldType="fftString"/>
+      </FieldDefs>
+    </TfrxFDQuery>
+    <TfrxFDQuery Name="qryFaltTotal" UserName="qryFaltTotal" CloseDataSource="True" BCDToCurrency="False" DataSetOptions="0" Left="216" Top="16" IgnoreDupParams="False" SQL.Text="select count(*) from figurinhas&#13;&#10;where possui=&#39;N&#39;" MacroCreate="True" MacroExpand="True" ReadOnly="False" Database="Conexao">
+      <FieldDefs>
+        <item FieldName="count"/>
+      </FieldDefs>
+    </TfrxFDQuery>
+  </TfrxDataPage>
+  <TfrxReportPage Name="Page1" HGuides.Text="" VGuides.Text="" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="0" ColumnPositions.Text="" Frame.Typ="0" MirrorMode="0">
+    <TfrxHeader Name="Header1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="41,57483167" Left="0" Top="18,89765" Width="718,1107">
+      <TfrxMemoView Name="Memo1" AllowVectorExport="True" Left="-6,6E-7" Top="0" Width="718,11069883" Height="37,79530167" ContentScaleOptions.Constraints.MaxIterationValue="0" ContentScaleOptions.Constraints.MinIterationValue="0" Font.Charset="1" Font.Color="0" Font.Height="-27" Font.Name="Arial" Font.Style="1" Frame.Typ="0" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="Relatório de Figurinhas Faltantes"/>
+    </TfrxHeader>
+    <TfrxMasterData Name="MasterData1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="22,67718167" Left="0" Top="132,28355" Width="718,1107" BandColumns.Count="4" BandColumns.Gap="75,5905511811024" BandColumns.Width="0" Columns="4" ColumnWidth="0" ColumnGap="75,5905511811024" DataSet="qryFaltantes" DataSetName="qryFaltantes" RowCount="0">
+      <TfrxMemoView Name="Memo4" AllowVectorExport="True" Left="3,77953" Top="0" Width="56,69295359" Height="18,89765167" ContentScaleOptions.Constraints.MaxIterationValue="0" ContentScaleOptions.Constraints.MinIterationValue="0" Frame.Typ="0" Text="[qryFaltantes.&#34;abreviacao&#34;][qryFaltantes.&#34;numero&#34;]"/>
+    </TfrxMasterData>
+    <TfrxGroupHeader Name="GroupHeader1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="26,4567124" Left="0" Top="83,14966" Width="718,1107" KeepWithData="False" Condition="&#60;qryFaltantes.&#34;selecao&#34;&#62;">
+      <TfrxMemoView Name="Memo2" AllowVectorExport="True" Left="3,77952967" Top="7,29999999997399E-7" Width="710,55164359" Height="26,45671167" ContentScaleOptions.Constraints.MaxIterationValue="0" ContentScaleOptions.Constraints.MinIterationValue="0" Font.Charset="1" Font.Color="0" Font.Height="-20" Font.Name="Arial" Font.Style="0" Frame.Typ="0" ParentFont="False" Text="Seleção: [qryFaltantes.&#34;selecao&#34;]"/>
+    </TfrxGroupHeader>
+    <TfrxFooter Name="Footer1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Frame.Typ="0" Height="26,45671167" Left="0" Top="177,63791" Width="718,1107">
+      <TfrxMemoView Name="Memo3" AllowVectorExport="True" Left="3,77953" Top="0" Width="710,55164359" Height="26,45671167" ContentScaleOptions.Constraints.MaxIterationValue="0" ContentScaleOptions.Constraints.MinIterationValue="0" Font.Charset="1" Font.Color="0" Font.Height="-20" Font.Name="Arial" Font.Style="0" Frame.Typ="0" ParentFont="False" Text="Quantidade Faltante Total: [qryFaltTotal.&#34;count&#34;]"/>
+    </TfrxFooter>
+  </TfrxReportPage>
+</TfrxReport>

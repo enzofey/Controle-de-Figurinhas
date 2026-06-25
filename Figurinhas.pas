@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.ComCtrls,
-  FigurinhasDM;
+  FigurinhasDM, frxSmartMemo, frCoreClasses, frxClass, frxDBSet, frxFDComponents,
+  Vcl.Menus;
 
 type
   TControle = class(TForm)
@@ -129,13 +130,13 @@ type
     pnllegenda2: TPanel;
     lblPossui: TLabel;
     lblnaopossui: TLabel;
-    Panel1: TPanel;
+    pnlLegFalt: TPanel;
     Label1: TLabel;
-    Panel2: TPanel;
+    pnlLegFalt1: TPanel;
     Label2: TLabel;
-    Panel3: TPanel;
+    pnlLegRep1: TPanel;
     Label3: TLabel;
-    Panel4: TPanel;
+    pnlLegRep2: TPanel;
     Label4: TLabel;
     PorcentagemCompleta: TLabel;
     lblPercCompleta: TLabel;
@@ -147,6 +148,20 @@ type
     DialogExportarRep: TSaveDialog;
     btnImportarLista: TButton;
     DialogImportar: TOpenDialog;
+    ImprimirFaltantes: TfrxReport;
+    ImprimirRepetidas: TfrxReport;
+    Imprimir: TButton;
+    ImprimirVisaoGeral: TfrxReport;
+    pnlModoImpressao: TPanel;
+    btnImprimirVisaoGeral: TButton;
+    btnImprimirFaltantes: TButton;
+    btnImprimirRepetidas: TButton;
+    btnCancelar: TButton;
+    lblImprimirClick: TLabel;
+    PerguntarImprimir: TPopupMenu;
+    VisoGeral1: TMenuItem;
+    VisoGeral2: TMenuItem;
+    Faltantes1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure cbSelTodasSelect(Sender: TObject);
     procedure cbSelFaltSelect(Sender: TObject);
@@ -161,6 +176,11 @@ type
     procedure btnExportFaltClick(Sender: TObject);
     procedure btnExportarRepClick(Sender: TObject);
     procedure btnImportarListaClick(Sender: TObject);
+    procedure ImprimirClick(Sender: TObject);
+    procedure btnImprimirVisaoGeralClick(Sender: TObject);
+    procedure btnImprimirRepetidasClick(Sender: TObject);
+    procedure btnImprimirFaltantesClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -173,6 +193,11 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TControle.btnCancelarClick(Sender: TObject);
+begin
+ pnlModoImpressao.Visible := False;
+end;
 
 procedure TControle.btnExportarRepClick(Sender: TObject);
 var Lista: TStringList;
@@ -342,6 +367,32 @@ begin
  end
  else
  Exit;
+end;
+
+procedure TControle.btnImprimirFaltantesClick(Sender: TObject);
+begin
+ ImprimirFaltantes.LoadFromFile('D:\Projetos\Controle de Figurinhas\Layout\Faltantes.fr3');
+ ImprimirFaltantes.ShowReport;
+ pnlModoImpressao.Visible := False;
+end;
+
+procedure TControle.btnImprimirRepetidasClick(Sender: TObject);
+begin
+ ImprimirRepetidas.LoadFromFile('D:\Projetos\Controle de Figurinhas\Layout\Repetidas.fr3');
+ ImprimirRepetidas.ShowReport;
+ pnlModoImpressao.Visible := False;
+end;
+
+procedure TControle.btnImprimirVisaoGeralClick(Sender: TObject);
+begin
+ ImprimirVisaoGeral.LoadFromFile('D:\Projetos\Controle de Figurinhas\Layout\VisaoGeral.fr3');
+ ImprimirVisaoGeral.ShowReport;
+ pnlModoImpressao.Visible := False;
+end;
+
+procedure TControle.ImprimirClick(Sender: TObject);
+begin
+ pnlModoImpressao.Visible := True;
 end;
 
 procedure TControle.cbSelFaltSelect(Sender: TObject);
