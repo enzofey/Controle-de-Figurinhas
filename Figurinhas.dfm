@@ -57,7 +57,7 @@ object Controle: TControle
       object QuantTot: TLabel
         Left = 214
         Top = 40
-        Width = 46
+        Width = 106
         Height = 15
         Caption = '<Atualize a P'#225'gina>'
       end

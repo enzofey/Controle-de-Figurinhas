@@ -291,7 +291,8 @@ begin
       SQL.Add('where quant_rep > 0');
       Open;
 
-      QuantRep.Caption := FieldByName('quant_rep').AsString;
+      if FieldByName('quant_rep').IsNull then QuantRep.Caption := '0'
+      else QuantRep.Caption := FieldByName('quant_rep').AsString;
 
       QuantRest.Caption := IntToStr(Quant_tot - Quant_col);
 
@@ -691,7 +692,8 @@ begin
    SQL.Add('where quant_rep > 0');
    Open;
 
-   QuantRep.Caption := FieldByName('quant_rep').AsString;
+   if FieldByName('quant_rep').IsNull then QuantRep.Caption := '0'
+   else QuantRep.Caption := FieldByName('quant_rep').AsString;
 
    QuantRest.Caption := IntToStr(Quant_tot - Quant_col);
 
@@ -1074,7 +1076,8 @@ begin
    SQL.Add('where quant_rep > 0');
    Open;
 
-   QuantRep.Caption := FieldByName('quant_rep').AsString;
+   if FieldByName('quant_rep').IsNull then QuantRep.Caption := '0'
+   else QuantRep.Caption := FieldByName('quant_rep').AsString;
 
    QuantRest.Caption := IntToStr(Quant_tot - Quant_col);
 
